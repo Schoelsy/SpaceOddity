@@ -21,5 +21,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^planet/(?P<planet_id>[0-9]+)', views.planet, name='planet'),
     url(r'^change_ownership/(?P<house_id>[0-9]+)', views.change_ownership, name='change_ownership'),
-    url(r'^$', views.index, name='index')
+    url(r'^$', views.index, name='index'),
+    url(r'^$', views.nav_bar, name='nav_bar')
 ]
