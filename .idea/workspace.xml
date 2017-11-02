@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8437b071-7743-4b1d-a531-6e49335f62a8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SpaceOddity/runtime.txt" afterPath="$PROJECT_DIR$/SpaceOddity/runtime.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SpaceOddity/requirements.txt" afterPath="$PROJECT_DIR$/SpaceOddity/requirements.txt" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,7 +29,7 @@
         <entry file="file://$PROJECT_DIR$/SpaceOddity/settings.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="388">
-              <caret line="121" column="48" lean-forward="true" selection-start-line="121" selection-start-column="48" selection-end-line="121" selection-end-column="48" />
+              <caret line="121" column="48" lean-forward="false" selection-start-line="121" selection-start-column="48" selection-end-line="121" selection-end-column="48" />
               <folding>
                 <element signature="e#314#323#0" expanded="true" />
               </folding>
@@ -41,18 +40,18 @@
       <file leaf-file-name="requirements-dev.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SpaceOddity/requirements-dev.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="15" lean-forward="false" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="15" />
+            <state relative-caret-position="51">
+              <caret line="3" column="20" lean-forward="true" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="requirements.txt" pinned="false" current-in-tab="false">
+      <file leaf-file-name="requirements.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SpaceOddity/requirements.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="8" lean-forward="true" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
+            <state relative-caret-position="17">
+              <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -68,7 +67,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="runtime.txt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="runtime.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SpaceOddity/runtime.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
@@ -82,7 +81,7 @@
         <entry file="file://$PROJECT_DIR$/SpaceOddity/wsgi.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
-              <caret line="15" column="43" lean-forward="true" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
+              <caret line="15" column="43" lean-forward="false" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
               <folding>
                 <element signature="e#228#237#0" expanded="true" />
               </folding>
@@ -126,17 +125,17 @@
         <option value="$PROJECT_DIR$/main_app/views.py" />
         <option value="$PROJECT_DIR$/SpaceOddity/wsgi.py" />
         <option value="$PROJECT_DIR$/requirements-dev.txt" />
-        <option value="$PROJECT_DIR$/SpaceOddity/requirements.txt" />
         <option value="$PROJECT_DIR$/SpaceOddity/Procfile" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/SpaceOddity/settings.py" />
         <option value="$PROJECT_DIR$/SpaceOddity/runtime.txt" />
+        <option value="$PROJECT_DIR$/SpaceOddity/requirements.txt" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="446" />
-    <option name="y" value="106" />
+    <option name="x" value="1122" />
+    <option name="y" value="143" />
     <option name="width" value="860" />
     <option name="height" value="1000" />
   </component>
@@ -219,7 +218,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="446" y="106" width="860" height="1000" extended-state="0" />
+    <frame x="1122" y="143" width="860" height="1000" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -618,7 +617,7 @@
     <entry file="file://$PROJECT_DIR$/SpaceOddity/wsgi.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="15" column="43" lean-forward="true" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
+          <caret line="15" column="43" lean-forward="false" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
           <folding>
             <element signature="e#228#237#0" expanded="true" />
           </folding>
@@ -633,37 +632,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SpaceOddity/requirements-dev.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="15" lean-forward="false" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpaceOddity/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="8" lean-forward="true" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SpaceOddity/Procfile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpaceOddity/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="121" column="48" lean-forward="true" selection-start-line="121" selection-start-column="48" selection-end-line="121" selection-end-column="48" />
-          <folding>
-            <element signature="e#314#323#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -681,6 +654,32 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="12" lean-forward="false" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpaceOddity/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="121" column="48" lean-forward="false" selection-start-line="121" selection-start-column="48" selection-end-line="121" selection-end-column="48" />
+          <folding>
+            <element signature="e#314#323#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpaceOddity/requirements-dev.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="20" lean-forward="true" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpaceOddity/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
