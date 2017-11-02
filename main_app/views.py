@@ -33,5 +33,5 @@ def change_ownership(request, house_id):
         house.owner = User.objects.first()
 
     house.save()
-
+    
     return redirect('planet', planet_id=house.planet.id)
