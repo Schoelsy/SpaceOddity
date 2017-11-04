@@ -2,6 +2,10 @@ from django.shortcuts import render, redirect
 from django.shortcuts import get_object_or_404
 from main_app import models
 from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login
+from django.http import HttpResponseRedirect, HttpResponse
+from django.shortcuts import render_to_response
+from django.template import RequestContext
 
 # Create your views here.
 def generate_params():
@@ -50,7 +54,26 @@ def change_ownership(request, house_id):
     
     return redirect('planet', planet_id=house.planet.id)
 
+def user_login(request):
+    context = RequestContext(request)
 
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+
+        user = authenticate(username=username, password=password)
+
+        if user:
+            if user.is_active:
+                login(request, user)
+                return HttpResponseRedirect('/admin/')
+            else:
+                return HttpResponse("Your Rango account is disabled.")
+        else:
+            print("Invalid login details: {0}, {1}".format(username, password))
+            return HttpResponse("Invalid login details supplied.")
+    else:
+        return render_to_response('login.html', {}, context)
 
 def nav_bar():
     return render()

@@ -23,7 +23,7 @@
         <!-- Navigation -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="{% url 'index' %}">Space Oddity</a>
+        <a class="navbar-brand" href="{% url 'index' %}">Space Oddity - The sky is no limit</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -47,32 +47,65 @@
                   <a class="dropdown-item" href="{% url 'planet' planet.id  %}">{{ planet.name }}</a>
                   {% endfor %}
               </div>
+            </li><li class="nav-item">
+              <a class="nav-link" href="#" data-toggle="modal" data-target="#myModal">Log in</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
+    <!-- Modal -->
+    <div id="myModal"  class="modal fade" role="dialog" >
+	<div class="modal-dialog">
+
+        <!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title">Log in</h4>
+			</div>
+
+			<div class="modal-body">
+
+				<form method='POST' action = "{% url 'login' %}" class="form-signin">
+                    <label for="inputEmail" class="sr-only">User name</label>
+                    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                    <label for="inputPassword" class="sr-only">Password</label>
+                    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+
+				</form>
+			</div> <!-- /.modal-body -->
+
+			<div class="modal-footer">
+				<button class="btn btn-lg btn-primary btn-block" type="submit">Ok</button>
+                <button class="btn btn-default" href="#" data-dismiss="modal">Close</button>
+			</div> <!-- /.modal-footer -->
+
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
     <!-- Page Content -->
     <div class="container">
 
       <!-- Page Heading/Breadcrumbs -->
-      <h1 class="mt-4 mb-3">Portfolio Item
-        <small>Subheading</small>
+      <h1 class="mt-4 mb-3">Portfolio
+        <small>{{planet.name}}</small>
       </h1>
 
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
           <a href="{% url 'index' %}">Home</a>
         </li>
-        <li class="breadcrumb-item active">Portfolio Item</li>
+        <li class="breadcrumb-item active">{{planet.name}}</li>
       </ol>
 
       <!-- Portfolio Item Row -->
       <div class="row">
 
         <div class="col-md-8">
-          <img class="img-fluid" src="http://placehold.it/750x500" alt="">
+          <img class="img-fluid" src={{planet.small_photo}}  alt="">
         </div>
 
         <div class="col-md-4">
@@ -97,15 +130,19 @@
           {% for house in planet.houses.all %}
           <div class="col-lg-6 portfolio-item">
               <div class="card h-100">
-                  <a href="{% url 'change_ownership' house.id  %}"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                  <div class="card-body">
-                      <h4 class="card-title">
-                          <a href="{% url 'change_ownership' house.id  %}">{{ house.id }}</a>
-                      </h4>
-                      <p class="card-text">: {{ house.price }}$ [OWNER: {{ house.owner }}]</p>
-                  </div>
+                <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                <div class="card-body">
+                  <h4 class="card-title">
+                    <h2 href="#">{{ house.name }}</h2>
+                  </h4>
+                  <h5>$ {{ house.price }}</h5>
+                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                </div>
+                <div class="card-footer">
+                  <a href="#" class="btn btn-primary">Reserve House</a>
+                </div>
               </div>
-          </div>
+            </div>
           {% endfor %}
       </div>
       <!-- /.row -->
