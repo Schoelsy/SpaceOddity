@@ -21,6 +21,7 @@ class House(models.Model):
     planet = models.ForeignKey(Planet, related_name='houses')
     owner = models.ForeignKey(User, related_name='houses', blank=True, null=True)
     name = models.CharField(max_length=50)
+    house_photo = models.CharField(max_length=100)
 
     def __str__(self):
         owner = self.owner if self.owner else 'noone'
