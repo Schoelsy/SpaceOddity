@@ -1,5 +1,8 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
+{% block header %}
 
   <head>
 
@@ -8,13 +11,16 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SPACE ODDITY</title>
+      <title>SPACE ODDITY</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+      <!-- Bootstrap core CSS -->
+      <link href="../static/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="../static/css/modern-business.css" rel="stylesheet">
+      <!--  fonts -->
+      <link href="../static/css/font-awesome.css" rel="stylesheet">
+
+      <!-- Custom styles for this template -->
+      <link href="../static/css/modern-business.css" rel="stylesheet">
 
   </head>
 
@@ -49,43 +55,51 @@
               </div>
             </li>
               <li class="nav-item">
-              <a class="nav-link" href="#" data-toggle="modal" data-target="#myModal">Log in</a>
+              <a class="nav-link" href="#" data-toggle="modal" data-target="#logModal">Log in</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
+    {% block alr %}
+    {% endblock %}
+
     <!-- Modal -->
-    <div id="myModal"  class="modal fade" role="dialog" >
-	<div class="modal-dialog">
+    <div id="logModal"  class="modal fade" role="dialog" >
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Log in</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-        <!-- Modal content-->
-		<div class="modal-content">
-			<div class="modal-header">
-				<h4 class="modal-title">Log in</h4>
-			</div>
+                </div>
 
-			<div class="modal-body">
+                <div class="modal-body">
 
-				<form method='POST' action = "{% url 'login' %}" class="form-signin">
-                    <label for="inputEmail" class="sr-only">User name</label>
-                    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-                    <label for="inputPassword" class="sr-only">Password</label>
-                    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                    <form method='POST' action = "{% url 'login' %}" class="form-signin">
+                        <label for="inputEmail" class="sr-only">User name</label>
+                        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                        <br>
+                        <label for="inputPassword" class="sr-only">Password</label>
+                        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
 
-				</form>
-			</div> <!-- /.modal-body -->
+                    </form>
+                </div> <!-- /.modal-body -->
 
-			<div class="modal-footer">
-				<button class="btn btn-lg btn-primary btn-block" type="submit">Ok</button>
-                <button class="btn btn-default" href="#" data-dismiss="modal">Close</button>
-			</div> <!-- /.modal-footer -->
+                <div class="modal-footer">
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Ok</button>
+                    <button class="btn btn-default" href="#" data-dismiss="modal">Close</button>
+                </div> <!-- /.modal-footer -->
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 
-		</div><!-- /.modal-content -->
-	</div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+    {% endblock %}
 
+    <!-- BODY -->
+    {% block body_block %}
     <header>
 
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -95,32 +109,30 @@
           <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
         </ol>
-        <!-- <div class="carousel-inner" role="listbox"> -->
-        <div class="carousel-inner" role="listbox">
-            {% for planet in planets%}
-            <div class="carousel-item item {% if forloop.first %} active{% endif %}" style="background-image: url({{planet.main_photo}})">
-                <div class="carousel-caption d-none d-md-block">
-                        <h1 href="{% url 'planet' planet.id  %}"> {{planet.name}} </h1>
-                    <p>{{planet.description}}</p>
-                </div>
-            </div>
-            {%endfor%}
-        </div>
-        </div>
+          <div class="carousel-inner" role="listbox">
+              {% for planet in planets%}
+              <div class="carousel-item item {% if forloop.first %} active{% endif %}" style="background-image: url({{planet.main_photo}})">
+                  <div class="carousel-caption d-none d-md-block">
+                      <h1 href="{% url 'planet' planet.id  %}"> {{planet.name}} </h1>
+                      <p>{{planet.description}}</p>
+                  </div>
+              </div>
+              {%endfor%}
+          </div>
+      </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
         </a>
         <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
         </a>
-      </div>
+        </div>
     </header>
 
     <!-- Page Content -->
     <div class="container">
-
       <h1 class="my-4">Houses out of this world</h1>
 
       <!-- Marketing Icons Section -->
@@ -133,30 +145,34 @@
                         <p class="card-text">{{ planet.description_long }}</p>
                     </div>
                     <div class="card-footer">
-                        <a href="{% url 'planet' planet.id  %}" class="btn btn-primary">Find Houses</a>
+                       <a href = "{% url 'planet' planet.id  %}">
+                           <button type="button" class="btn btn-info btn-lg">Find Houses</button>
+                       </a>
                     </div>
                 </div>
             </div>
             {% endfor %}
 
       </div>
-      <!-- /.row -->
-
     </div>
-    <!-- /.container -->
+
+    {% endblock %}
 
     <!-- Footer -->
+    {% block footer %}
     <footer class="py-5 bg-dark">
       <div class="container">
         <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
       </div>
-      <!-- /.container -->
     </footer>
 
     <!-- Bootstrap core JavaScript -->
     <script src="../static/js/jquery.min.js"></script>
     <script src="../static/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/js/scripts/home.js"></script>
 
   </body>
 
 </html>
+
+{% endblock %}

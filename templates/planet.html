@@ -1,167 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+{% extends 'index.html' %}
 
-    <title>SPACE ODDITY</title>
+{% block alr %}
 
-    <!-- Bootstrap core CSS -->
-    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="../static/css/modern-business.css" rel="stylesheet">
-
-  </head>
-
-  <body>
-
-        <!-- Navigation -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <div class="container">
-        <a class="navbar-brand" href="{% url 'index' %}">Space Oddity - The sky is no limit</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="services.html">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Portfolio
-              </a>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
-                  {% for planet in planets %}
-                  <a class="dropdown-item" href="{% url 'planet' planet.id  %}">{{ planet.name }}</a>
-                  {% endfor %}
-              </div>
-            </li><li class="nav-item">
-              <a class="nav-link" href="#" data-toggle="modal" data-target="#myModal">Log in</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <!-- Modal -->
-    <div id="myModal"  class="modal fade" role="dialog" >
-	<div class="modal-dialog">
-
-        <!-- Modal content-->
-		<div class="modal-content">
-			<div class="modal-header">
-				<h4 class="modal-title">Log in</h4>
-			</div>
-
-			<div class="modal-body">
-
-				<form method='POST' action = "{% url 'login' %}" class="form-signin">
-                    <label for="inputEmail" class="sr-only">User name</label>
-                    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-                    <label for="inputPassword" class="sr-only">Password</label>
-                    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-
-				</form>
-			</div> <!-- /.modal-body -->
-
-			<div class="modal-footer">
-				<button class="btn btn-lg btn-primary btn-block" type="submit">Ok</button>
-                <button class="btn btn-default" href="#" data-dismiss="modal">Close</button>
-			</div> <!-- /.modal-footer -->
-
-		</div><!-- /.modal-content -->
-	</div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-
-
-    <!-- Page Content -->
-    <div class="container">
-
-      <!-- Page Heading/Breadcrumbs -->
-      <h1 class="mt-4 mb-3">Portfolio
-        <small>{{planet.name}}</small>
-      </h1>
-
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-          <a href="{% url 'index' %}">Home</a>
-        </li>
-        <li class="breadcrumb-item active">{{planet.name}}</li>
-      </ol>
-
-      <!-- Portfolio Item Row -->
-      <div class="row">
-
-        <div class="col-md-8">
-          <img class="img-fluid" src={{planet.small_photo}}  alt="">
-        </div>
-
-        <div class="col-md-4">
-          <h3 class="my-3">Project Description</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.</p>
-          <h3 class="my-3">Project Details</h3>
-          <ul>
-            <li>Lorem Ipsum</li>
-            <li>Dolor Sit Amet</li>
-            <li>Consectetur</li>
-            <li>Adipiscing Elit</li>
-          </ul>
-        </div>
-
-      </div>
-      <!-- /.row -->
-
-      <!-- Related Projects Row -->
-      <h3 class="my-4">Related Projects</h3>
-
-      <div class="row">
-          {% for house in planet.houses.all %}
-          <div class="col-lg-6 portfolio-item">
-              <div class="card h-100">
-                <a href="#"><img class="card-img-top" src={{house.house_photo}} alt=""></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <h2 href="#">{{ house.name }}</h2>
-                  </h4>
-                  <h5>$ {{ house.price }}</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-                </div>
-                <div class="card-footer">
-                  <a href="#" class="btn btn-primary">Reserve House</a>
-                </div>
-              </div>
-            </div>
-          {% endfor %}
-      </div>
-      <!-- /.row -->
-
+<div class="page-alerts">
+    <div class="alert alert-success page-alert" id="alert-5">
+        <button type="button" class="close"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+        <strong>Cool!</strong> This alert will close in 3 seconds. The data-delay attribute is in milliseconds.
     </div>
-    <!-- /.container -->
+</div>
 
-    <!-- Footer -->
-    <footer class="py-5 bg-dark">
-      <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
-      </div>
-      <!-- /.container -->
-    </footer>
+{% endblock %}
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="../static/js/jquery.min.js"></script>
-    <script src="../static/js/bootstrap.bundle.min.js"></script>
+{% block body_block %}
 
-  </body>
 
-</html>
+
+
+<!-- Page Content -->
+<div class="container">
+
+  <!-- Page Heading/Breadcrumbs -->
+  <h1 class="mt-4 mb-3">Portfolio <small>{{planet.name}}</small> </h1>
+
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="{% url 'index' %}">Home</a>
+    </li>
+    <li class="breadcrumb-item active">{{planet.name}}</li>
+  </ol>
+
+  <!-- Portfolio Item Row -->
+  <div class="row">
+
+    <div class="col-md-8">
+      <img class="img-fluid" src={{planet.small_photo}}  alt="">
+    </div>
+
+    <div class="col-md-4">
+      <h3 class="my-3">Project Description</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.</p>
+      <h3 class="my-3">Project Details</h3>
+      <ul>
+        <li>Lorem Ipsum</li>
+        <li>Dolor Sit Amet</li>
+        <li>Consectetur</li>
+        <li>Adipiscing Elit</li>
+      </ul>
+    </div>
+
+  </div>
+  <!-- /.row -->
+
+  <!-- Related Projects Row -->
+  <h3 class="my-4">Related Projects</h3>
+
+  <div class="row">
+      {% for house in planet.houses.all %}
+      <div class="col-lg-6 portfolio-item">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" src={{house.house_photo}} alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <h2 href="#">{{ house.name }}</h2>
+              </h4>
+              <h5>$ {{ house.price }}</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+            </div>
+            <div class="card-footer">
+
+              <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Reserve House</button>
+
+                <!-- Modal -->
+                <div id="myModal" class="modal fade" role="dialog">
+                    <div class="modal-dialog" id="contact_form">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Contact informations</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-body panel-body">
+                                <div class="form-group">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                                            </span>
+                                            <select class="form-control" id="sel1">
+                                                <option>Mrs</option>
+                                                <option>Mr</option>
+                                                <option>Ms</option>
+                                                <option>Miss</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                                        </span>
+                                        <input type="text" class="form-control" placeholder="First Name" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                                        </span>
+                                        <input type="text" class="form-control" placeholder="Last Name" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                                        </span>
+                                        <input type="text" class="form-control" placeholder="Email" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="fa fa-phone-square" aria-hidden="true"></i>
+                                        </span>
+                                        <input type="text" class="form-control" placeholder="Phone number" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="fa fa-commenting" aria-hidden="true"></i>
+                                        </span>
+                                        <textarea class="form-control" name="comment" placeholder="Message"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-lg btn-primary btn-block" id = "send_button" href="#" type="submit">Send</button>
+                                <button class="btn btn-default" href="#" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+  </div>
+  <!-- /.row -->
+<!-- Success message -->
+</div>
+<!-- /.container -->
+    {% endblock %}
+
+
