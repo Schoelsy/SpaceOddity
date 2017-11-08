@@ -26,3 +26,6 @@ class House(models.Model):
     def __str__(self):
         owner = self.owner if self.owner else 'noone'
         return "House #{} owned by {} [{}$]".format(self.id, owner, self.price)
+
+
+
