@@ -27,7 +27,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['spaceoddity1.herokuapp.com', '127.0.0.1', 'https://nameless-bayou-38001.herokuapp.com']
+ALLOWED_HOSTS = ['spaceoddity1.herokuapp.com', '127.0.0.1', 'nameless-bayou-38001.herokuapp.com']
 
 
 # Application definition
