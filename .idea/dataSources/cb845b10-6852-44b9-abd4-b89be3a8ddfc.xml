@@ -415,13 +415,14 @@ model</ColNames>
     </column>
     <column id="91" parent="13" name="name">
       <Position>4</Position>
-      <DataType>CHAR(50)(0,-1)|12</DataType>
+      <DataType>TEXT(0,-1)|12</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;House&apos;</DefaultExpression>
     </column>
     <column id="92" parent="13" name="house_photo">
       <Position>5</Position>
       <DataType>TEXT(0,-1)|12</DataType>
+      <DefaultExpression>&apos;zdjecie&apos;</DefaultExpression>
     </column>
     <key id="93" parent="13">
       <ColNames>id</ColNames>

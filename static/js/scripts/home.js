@@ -12,13 +12,12 @@ $(function(){
     });
 });
 */
-function close_this_shit(){
+function closeFunction(){
     $("#modal_alert").modal("hide");
 }
 function myFunction() {
     setTimeout(function(){
-        $("#modal_alert").modal("show");
+        $("#modal_alert").modal("hide");
     }, 500);
-    $("#myModal").modal("hide");
 
 }
